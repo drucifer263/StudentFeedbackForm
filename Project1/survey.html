@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey</title>
+    <!--Bootstrap Reference With JS Reference-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <!-- My CSS and JS -->
+    <link rel="stylesheet" type="text/css" href="myStyleSheet.css" />
+    <script src="myJavaScript.js"></script>
+    <link rel="shortcut icon" href="images/Tindex.ico">
+</head>
+<body>
+    <!-- Nav bar -->
+    <nav class="navBar">
+        <div id="nav-btn">
+            <img id="nav-icon" src="images/menu.png" alt="Menu Icon" />
+        </div>
+        <ul class="box2 navList show ">
+            <li><a class="highlight" href="http://cis-iis2.temple.edu/Spring2019/CIS3342_tua07182/">Lab Page</a></li>
+            <li><a href="#top">Top</a></li>
+            <li><a href="#footer">Footer</a></li>
+        </ul>
+    </nav>
+    <!--Header Jumbotron-->
+    <header id="header1" class="jumbotron">
+        <h1 id="top">Class Survey</h1>
+    </header>
+    <main>
+        <section class="box">
+            <div class="card">
+                <!--Main Form-->
+                <form action="./Processed.aspx" method="post" id="frmStudentFeedback" name="frmStudentFeedback">
+                    <section id="studentInfo" class="form-group">
+                        <!--Form Instructions-->
+                        <h4>Welcome to the CIS student feedback form.</h4>
+                        <br />
+                        <label>Please enter your Name and TUID below:</label>
+                        <br />
+                        <!--Student input-->
+                        Name: <input type="text" id="txtName" name="txtName" class="form-control d-inline" value="Enter Name Here..." required />
+                        <br />
+                        <br />
+                        TUID: <input type="number" id="txtTuID" name="txtTuID" class="form-control d-inline" value="Enter TUID Here..." min="0" maxlength="9" size="9" required />
+                    </section>
+                    <br />
+                    <section id="courseSelect">
+                        <!--Course selection-->
+                        <label>Please select a classs you would like to review</label>
+                        <br />
+                        <select id="courseSelection" name="courseSelection">
+                            <option>CIS 3344</option>
+                            <option>CIS 3342</option>
+                            <option>CIS 2168</option>
+                            <option>CIS 2106</option>
+                        </select>
+                    </section>
+                    <br />
+                    <section id="courseQuestions">
+                        <!--Course Questions-->
+                        <label>Please answer each question with Strongly Agree, Agree, Neutral, Disagree, or Strongly Disagree</label>
+                        <br />
+                        <br />
+                        <label>Course Questionaire:</label>
+                        <br />
+                        <br />
+                        <label>Question 1: Did you enjoy the course? &nbsp</label>
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question1" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question1" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question1" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question1" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question1" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 2:</label>
+                        Was the course material appropriate for the class? &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question2" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question2" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question2" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question2" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question2" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 3:</label>
+                        Did you learn anything from the course? &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question3" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question3" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question3" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question3" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question3" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 4:</label>
+                        Was the course engaging? &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question4" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question4" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question4" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question4" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question4" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 5:</label>
+                        Did The course assignments and lectures usefully complement each other? &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question5" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question5" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question5" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question5" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question5" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 6:</label>
+                        The course developed my ability to read and think critically &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question6" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question6" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question6" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question6" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question6" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 7:</label>
+                        The course provided the opportunity to practice the skills required in the course &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question7" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question7" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question7" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question7" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question7" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 8:</label>
+                        How satisfied were you with this course? &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question8" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question8" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question8" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question8" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question8" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 9:</label>
+                        The course helped me improve my coding  &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question9" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question9" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question9" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question9" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question9" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 10:</label>
+                        I thouroughly understand the objectives set out by the course &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question10" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question10" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question10" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question10" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question10" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 11:</label>
+                        The course provided a mixture of explanation and practice &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question11" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question11" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question11" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question11" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question11" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 12:</label>
+                        The course helped me make progress in my acquisition of the process or language? &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question12" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question12" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question12" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question12" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question12" value="Strongly Disagree" />
+                    </section>
+                    <br />
+                    <section id="professorQuestions">
+                        <!--Professor Questions-->
+                        <label>Professor Questionaire:</label>
+                        <br />
+                        <br />
+                        <label>Question 13:</label>
+                        Was the professor prepared for Class? &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question13" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question13" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question13" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question13" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question13" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 14:</label>
+                        The professor provided clear constructive feedback &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question14" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question14" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question14" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question14" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question14" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 15:</label>
+                        The professor provided guidance for understanding course exercises &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question15" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question15" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question15" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question15" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question15" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 16:</label>
+                        The professor increased my understanding of course material &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question16" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question16" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question16" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question16" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question16" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 17:</label>
+                        The professor clearly presented the skills to be learned &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question17" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question17" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question17" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question17" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question17" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 18:</label>
+                        The professor was helpful when I had difficulty performing activities &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question18" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question18" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question18" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question18" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question18" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 19:</label>
+                        The professor clearly articulated the standards of performance for the course &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question19" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question19" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question19" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question19" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question19" value="Strongly Disagree" />
+                        <br />
+                        <br />
+                        <label>Question 20:</label>
+                        The professor encouraged critical engagement with the material &nbsp
+                        Strongly Agree <input id="rdoStrongAgree" type="radio" name="question20" value="Strongly Agree" />&nbsp Agree <input id="rdoAgree" type="radio" name="question20" value="Agree" />&nbsp
+                        Neutral <input id="rdoNeutral" type="radio" name="question20" value="Neutral" checked />&nbsp Disagree<input id="rdoDisagree" type="radio" name="question20" value="Disagree" />&nbsp
+                        Strongly Disagree<input id="rdoStrongDisagree" type="radio" name="question20" value="Strongly Disagree" />
+                    </section>
+                    <br />
+                    <!--Submit button-->
+                    <div class="box">
+                        <div class="row">
+                            <input id="btnSubmitForm" name="btnSubmitForm" class="btn btn-success d-inline col-md-12" type="button" value="Submit Results" onclick="formValidation()" />
+                            <!--<input id="btnSubmitForm" name="btnSubmitForm" class="btn btn-success d-inline" type="submit" value="Submit Results"/>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!--Collapsible footer info-->
+    <footer id="footer">
+        <div class="card">
+            <div class="card-header text-center">
+                <a id="footerHeader" class="card-link" data-toggle="collapse" href="#collapseOne">
+                    Copyright
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse text-center" data-parent="#footer">
+                <div class="card-body">
+                    <p> &copy; Drew Watson <a href="mailto:dru.w@temple.edu">Dru</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
